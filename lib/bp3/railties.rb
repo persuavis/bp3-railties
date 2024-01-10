@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+require 'active_support/concern'
+require 'active_support/core_ext/module/attribute_accessors'
+
+require_relative 'railties/prepender'
+require_relative 'railties/railtie'
 require_relative 'railties/version'
 
 module Bp3
   module Railties
-    class Error < StandardError; end
-    # Your code goes here...
   end
 end
