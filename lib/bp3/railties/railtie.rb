@@ -7,11 +7,15 @@ module Bp3
     class Railtie < Rails::Railtie
       initializer 'bp3.railties.railtie.register' do |app|
         app.config.after_initialize do
-          # Prepender ensures that common filters are invoked
           ::Rails::MailersController # preload
           module ::Rails
             class MailersController
-              prepend Prepender
+              include Bp3::Core::Actions
+              include Bp3::Core::Settings
+              include Bp3::Core::FeatureFlags
+              include Bp3::Core::Cookies
+
+              before_action :authenticate_root!
             end
           end
         end

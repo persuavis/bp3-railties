@@ -9,6 +9,9 @@ RSpec.describe Bp3::Railties do
   end
 
   # it 'does something useful' do
-  #   expect(Rails::MailersController.ancestors).to include(Bp3::Railties::Prepender)
+  #   expect(Rails::MailersController.ancestors).to include(Bp3::Railties::Actions)
+  #   expect(Rails::MailersController.ancestors).to include(Bp3::Railties::Settings)
+  #   expect(Rails::MailersController.ancestors).to include(Bp3::Railties::FeatureFlags)
+  #   expect(Rails::MailersController.ancestors).to include(Bp3::Railties::Cookies)
   # end
 end
